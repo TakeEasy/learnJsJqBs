@@ -10,4 +10,13 @@ mood = "The mood is \"happy\"!!";
 age = 22;
 temperature = -34.66666;
 married = false;
+
+// var beatles = Array(4);
+var beatles = Array();
+beatles[0] = "John";
+// ...
+
+var lennon = Object();
+lennon.name = "John";
+lennon.year = 1940;
 alert(mood);
