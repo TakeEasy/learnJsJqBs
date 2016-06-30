@@ -3,8 +3,12 @@
  */
 function showPic(whichpic) {
     var source = whichpic.getAttribute("href");
+    var text = whichpic.getAttribute("title");
     var placeholder = document.getElementById("placeholder");
+    var description = document.getElementById("description");
     placeholder.setAttribute("src",source);
+    // description.childNodes[0].nodeValue = text;
+    description.firstChild.nodeValue = text;
 }
 function countBodyChild() {
     var body_element = document.getElementsByTagName("body")[0];
@@ -14,4 +18,4 @@ function countBodyChild() {
     }
     
 }
-window.onload = countBodyChild();
+// window.onload = countBodyChild();
