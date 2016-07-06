@@ -10,11 +10,12 @@ function showPic(whichpic) {
     placeholder.setAttribute("src",source);
     // description.childNodes[0].nodeValue = text;
     description.firstChild.nodeValue = text;
+    return true;
 }
 function countBodyChild() {
-    var body_element = document.getElementsByTagName("body")[0];
+    var body_element = document.getElementsByTagName("h1")[0];
     alert(body_element.childNodes.length);
-    for(i=1;i<body_element.childNodes.length;i++){
+    for(var i=0;i<body_element.childNodes.length;i++){
         alert(body_element.childNodes[i].getAttribute("id"))
     }
     
@@ -47,3 +48,4 @@ function addLoadEvent(func) {
 
 addLoadEvent(prepareGallery);
 // window.onload = countBodyChild();
+//window.onload = countBodyChild();
