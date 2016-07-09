@@ -13,6 +13,17 @@ function addLoadEvent(func) {
     }
 }
 
+function addClass(element,value) {
+    if (!element.className){
+        element.className = value;
+    } else {
+        newClassName = element.className;
+        newClassName += " ";
+        newClassName += value;
+        element.className = newClassName;
+    }
+}
+
 function getNextElement(node) {
     if(node.nodeType ==1){
         return node;
@@ -29,8 +40,10 @@ function styleHeaderSiblings() {
     var elem;
     for (var i = 0;i<header.length;i++){
         elem = getNextElement(header[i].nextSibling);
-        elem.style.fontWeight = "bold";
-        elem.style.fontSize = "1.2em";
+        // elem.style.fontWeight = "bold";
+        // elem.style.fontSize = "1.2em";
+        // elem.setAttribute("class","intro");
+        addClass(elem,"intro");
     }
 }
  function stripeTables() {
@@ -42,7 +55,8 @@ function styleHeaderSiblings() {
          rows = tables[i].getElementsByTagName("tr");
          for (var j=0;j<rows.length;j++) {
              if (odd == true) {
-                 rows[j].style.backgroundColor = "#ffc";
+                 // rows[j].style.backgroundColor = "#ffc";
+                 addClass(rows[j],"odd");
                  odd = false;
              } else {
                  odd = true;
